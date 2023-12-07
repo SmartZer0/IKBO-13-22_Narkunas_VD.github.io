@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О Нас - Наша Компания</title>
+    <style>
+      /* Базовые стили */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          to bottom,
+          rgb(255, 255, 255),
+          rgb(2, 19, 255),
+          rgb(255, 2, 2)
+        );
+        color: #333;
+        animation: fadeIn ease 1s;
+      }
+
+      header {
+        background-color: #fff;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      section {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideInUp ease 1s;
+      }
+
+      h1,
+      h2 {
+        color: #007bff;
+      }
+
+      h3 {
+        color: #007bff;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      /* Адаптивность */
+      @media (max-width: 600px) {
+        section {
+          padding: 10px;
+        }
+      }
+
+      @media (min-width: 601px) and (max-width: 1024px) {
+        section {
+          max-width: 600px;
+        }
+      }
+
+      /* Стили для модального окна */
+      #modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      #modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: auto;
+        animation: zoomIn ease 1s;
+      }
+
+      #close-modal {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      /* Анимации */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* Стили для кнопки */
+      button {
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 16px;
+        margin-top: 10px;
+        animation: pulse 1s infinite;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Анимация для кнопки при наведении */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>О Нас - Эксперты по Компьютерам и Комплектующим</h1>
+    </header>
+
+    <section>
+      <h2>Наша Миссия: Привносить Инновации в Мир Технологий</h2>
+      <p>
+        Мы — команда энтузиастов, которая страстно увлечена миром компьютеров и
+        комплектующих. Наша цель - делиться знаниями, предоставлять экспертные
+        мнения и помогать вам сделать осознанный выбор в этом быстро меняющемся
+        мире технологий.
+      </p>
+
+      <h2>Что Нас Вдохновляет?</h2>
+      <p>
+        Мы вдохновляемся постоянным развитием технологий. От процессоров и
+        видеокарт до периферийных устройств — мы следим за инновациями, чтобы
+        быть вашим надежным источником информации.
+      </p>
+
+      <h2>Наши Принципы</h2>
+      <ol>
+        <li>
+          <strong>Экспертиза и Надежность:</strong> Мы предоставляем только
+          тщательно отобранные продукты, на которые можно полагаться.
+        </li>
+        <li>
+          <strong>Образование и Поддержка:</strong> Мы стремимся быть вашими
+          наставниками в мире технологий, предоставляя информацию и поддержку
+          для принятия взвешенных решений.
+        </li>
+        <li>
+          <strong>Сообщество и Обмен Опытом:</strong> Мы создаем сообщество, где
+          можно делиться опытом, задавать вопросы и находить ответы вместе.
+        </li>
+      </ol>
+
+      <h2>Наши Эксперты</h2>
+      <p>
+        Наш коллектив состоит из профессионалов с многолетним опытом в сфере
+        компьютерных технологий. Мы гордимся своей способностью предоставлять
+        вам самую актуальную и полезную информацию.
+      </p>
+
+      <p>
+        Присоединяйтесь к нам, и давайте вместе исследовать бескрайний мир
+        компьютеров и комплектующих!
+      </p>
+
+      <!-- Новый блок с использованием JavaScript -->
+      <div id="modal">
+        <div id="modal-content">
+          <span id="close-modal">&times;</span>
+          <h3>Форма обратной связи</h3>
+          <!-- Здесь вы можете добавить форму обратной связи -->
+          <form>
+            <label for="feedback">Ваш отзыв:</label>
+            <textarea
+              id="feedback"
+              name="feedback"
+              rows="4"
+              cols="50"
+            ></textarea>
+            <br />
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+
+      <button onclick="openModal()">Поделиться</button>
+
+      <script>
+        function openModal() {
+          var modal = document.getElementById("modal");
+          modal.style.display = "flex";
+
+          // Добавим обработчик события для закрытия модального окна
+          var closeModalBtn = document.getElementById("close-modal");
+          closeModalBtn.onclick = function () {
+            modal.style.display = "none";
+          };
+
+          // Закрываем модальное окно при клике вне его области
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          };
+        }
+      </script>
+    </section>
+  </body>
+</html>

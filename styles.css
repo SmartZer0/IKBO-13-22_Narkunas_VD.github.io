@@ -1,0 +1,213 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333333;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+header {
+  background-color: #37863b;
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 8;
+}
+
+nav {
+  background-color: #333333;
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 8;
+}
+
+div#div1 {
+  border: 3.5px solid #650ea4;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+div#div2 {
+  position: absolute;
+}
+
+div#div3 {
+  border: 3px solid #ad490b;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #a0af1dbe;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer#footer1 {
+  position: relative;
+}
+
+p#p1 {
+  float: right;
+}
+
+p#p2 {
+  float: left;
+}
+
+button1 {
+  background: #a0af1d53; /* Фон*/
+  color: #d6330ef7; /* Текст */
+  border: none; /* Наличие|цвет рамки */
+}
+
+input {
+  background: #c8c6c5c7;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56%;
+  position: relative;
+  height: 0;
+}
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+input::placeholder {
+  color: red;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* Общий стиль контейнера */
+.container1 {
+  display: flex;
+  /* Отображаем элементы внутри контейнера в виде строки */
+  justify-content: center;
+  /* Выравниваем элементы по горизонтали по центру */
+  align-items: center;
+  /* Выравниваем элементы по вертикали по центру */
+  height: 100vh;
+  /* Устанавливаем высоту контейнера равной высоте viewport */
+  background-color: #7470709e;
+  /* Устанавливаем фоновый цвет контейнера */
+}
+
+/* Стиль карточки */
+.card {
+  position: relative;
+  /* Относительное позиционирование для использования абсолютного позиционирования внутри */
+  flex: 1;
+  /* Устанавливаем равную ширину для всех карточек */
+  margin: 0 10px;
+  /* Устанавливаем горизонтальные отступы между карточками */
+  max-width: 350px;
+  /* Устанавливаем максимальную ширину для карточки */
+  height: 500px;
+  /* Устанавливаем высоту карточки */
+  background-color: #f3f3f3;
+  /* Устанавливаем фоновый цвет карточки */
+  overflow: hidden;
+  /* Скрываем содержимое, которое выходит за границы карточки */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* Добавляем тень для карточки */
+  border-radius: 10px;
+  /* Устанавливаем радиус скругления углов для карточки */
+  transition: transform 0.3s;
+  /* Добавляем плавное изменение свойства transform при анимации */
+}
+
+.card:hover {
+  transform: scale(1.15);
+  /* Увеличиваем размер карточки при наведении */
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Устанавливаем полупрозрачный черный цвет для псевдоэлемента */
+  width: 100%;
+  /* Устанавливаем ширину псевдоэлемента на 100% */
+  height: 100%;
+  /* Устанавливаем высоту псевдоэлемента на 100% */
+  opacity: 0;
+  /* Скрываем псевдоэлемент */
+  transition: opacity 0.3s;
+  /* Добавляем плавное изменение свойства opacity при анимации */
+}
+
+.card:hover:before {
+  opacity: 1;
+  /* Показываем псевдоэлемент с полупрозрачным черным цветом при наведении */
+}
+
+.card img {
+  object-fit: cover;
+  /* Растягиваем изображение по размерам карточки */
+  width: 100%;
+  /* Устанавливаем ширину изображения на 100% */
+  height: 90%;
+  /* Устанавливаем высоту изображения на 100% */
+}
+.card .text {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  padding: 10px;
+  color: #46cef4df;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  opacity: 0; /* Начальная прозрачность текста */
+  transition: opacity 0.3s; /* Анимация изменения прозрачности */
+}
+
+.card:hover .text {
+  opacity: 1; /* Показываем текст при наведении на карточку */
+}
+
+/* Responsive styles for smaller screens (e.g., tablets) */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+/* Responsive styles for even smaller screens (e.g., smartphones) */
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
