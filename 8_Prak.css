@@ -1,0 +1,208 @@
+/* Установим стили по умолчанию для контейнера */
+.container {
+  display: grid; /* Включаем Grid Layout */
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "main"
+    "footer";
+  grid-template-columns: 1fr; /* Одна равная ширина столбца */
+  grid-template-rows: auto auto 1fr auto; /* Автоматическая высота для header и footer, остальное занимает оставшееся пространство */
+  gap: 10px; /* Расстояние между элементами */
+}
+
+/* Медиа-запрос для планшетов и больших экранов */
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 1fr 3fr; /* Боковая панель будет шире */
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+/* Медиа-запрос для больших экранов */
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 1fr 2fr; /* Боковая панель будет еще шире */
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+/* Стилизация отдельных областей */
+header {
+  grid-area: header; /* Привязываем к области header */
+  background: #3498db; /* Цвет фона */
+  padding: 10px;
+  color: white;
+}
+
+nav {
+  grid-area: sidebar; /* Привязываем к области sidebar */
+  background: #f39c12;
+  padding: 10px;
+}
+
+main {
+  grid-area: main; /* Привязываем к области main */
+  background: #2ecc71;
+  padding: 10px;
+}
+
+footer {
+  grid-area: footer; /* Привязываем к области footer */
+  background: #e74c3c;
+  padding: 10px;
+  color: white;
+}
+
+/*///////////////////////////*/
+/*       2-я    часть        */
+
+/* Общие стили для контейнера и блоков */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 столбца равной ширины */
+  grid-gap: 10px; /* Расстояние между блоками */
+  width: 80%; /* Ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера по горизонтали */
+}
+
+.block {
+  background: #3498db; /* Цвет фона блока */
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s; /* Плавная анимация */
+  cursor: pointer;
+}
+
+/* Эффект при наведении на каждый блок */
+.block:hover {
+  transform: scale(1.1); /* Увеличиваем размер при наведении */
+}
+
+/*///////////////////////////*/
+/*       3-я    часть        */
+
+/* Общие стили для контейнера и формы */
+.form-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: transform 0.3s, box-shadow 0.3s; /* Добавляем transition для box-shadow */
+}
+
+input:focus,
+textarea:focus {
+  transform: scale(1.05); /* Увеличиваем размер при фокусе */
+  box-shadow: 0 0 5px #3498db; /* Добавляем подсветку при фокусе */
+}
+
+button {
+  grid-column: span 1; /* Занимает 1 столбец в сетке */
+  background: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s; /* Плавная анимация */
+}
+
+/* Эффект при наведении на инпуты и кнопку */
+input:hover,
+textarea:hover,
+button:hover {
+  background-color: #32eeac;
+  transform: scale(1.15); /* Увеличиваем размер при наведении */
+}
+
+/*///////////////////////////*/
+/*       4-я    часть        */
+
+/* Контейнер футера - использует Grid Layout для размещения элементов */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Гибкая сетка */
+  grid-gap: 20px;
+  text-align: center;
+}
+
+/* Стили для каждой секции футера */
+.contact-info,
+.site-theory,
+.store,
+.additional {
+  padding: 10px;
+  border: 1px solid #555;
+  transition: transform 0.3s; /* Плавная анимация при наведении */
+  position: relative;
+}
+
+/* Псевдоэлемент для анимации при наведении */
+.contact-info::before,
+.site-theory::before,
+.store::before,
+.additional::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для подсветки */
+  transform: scale(0); /* Начальный масштаб псевдоэлемента (скрыт) */
+  transform-origin: top left;
+  transition: transform 0.3s; /* Плавная анимация при наведении */
+}
+
+/* Эффект при наведении на каждую секцию футера */
+.contact-info:hover,
+.site-theory:hover,
+.store:hover,
+.additional:hover {
+  transform: scale(1.05); /* Увеличиваем размер при наведении */
+}
+
+/* Эффект подсветки при наведении */
+.contact-info:hover::before,
+.site-theory:hover::before,
+.store:hover::before,
+.additional:hover::before {
+  transform: scale(1);
+  /* Показываем псевдоэлемент (подсветку) при наведении */
+}
