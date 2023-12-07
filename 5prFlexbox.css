@@ -25,7 +25,7 @@ div11 {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #393738;
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(2, 19, 255));
 }
 
 /* CSS-переменные для градиентного фона и длительности анимации */

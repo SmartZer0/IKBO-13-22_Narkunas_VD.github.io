@@ -13,7 +13,7 @@ p {
 }
 
 header {
-  background-color: #37863b;
+  background-color: #333333;
   color: white;
   padding: 20px;
   position: sticky;
@@ -102,7 +102,6 @@ input::placeholder {
   /* Выравниваем элементы по вертикали по центру */
   height: 100vh;
   /* Устанавливаем высоту контейнера равной высоте viewport */
-  background-color: #7470709e;
   /* Устанавливаем фоновый цвет контейнера */
 }
 
